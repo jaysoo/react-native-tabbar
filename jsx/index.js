@@ -60,25 +60,18 @@ class Tabbar extends Component {
 }
 
 Tabbar.propTypes = {
-  selected: React.PropTypes.string,
-  onTabItemPress: React.PropTypes.func,
+  selected: React.PropTypes.string.isRequired,
+  onTabItemPress: React.PropTypes.func.isRequired,
   tabHeight: React.PropTypes.number,
   renderTabComponent: React.PropTypes.func
 };
 
 Tabbar.defaultProps = {
   selected: '',
-  onTabItemPress: () => {},
   tabHeight: 50,
   renderTabComponent: (label, isActive) => <View style={styles.tabView}><Text>{ label }</Text></View>
 };
 
-class Item extends Component {
-  constructor(props) {
-    super(props);
-  }
-}
-
-Tabbar.Item = Item;
+Tabbar.Item = View;
 
 module.exports = Tabbar;

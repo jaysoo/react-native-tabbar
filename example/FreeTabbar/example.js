@@ -33,13 +33,13 @@ const Example = React.createClass({
       <Tabbar selected={state.selected}
               onTabItemPress={this.onTabItemPress}
               style={{ borderTopWidth: 1, borderColor: 'hotpink' }}
-              renderTabComponent={(label, isActive) => (
+              renderTabComponent={(name, isActive) => (
                 <View
                     style={[
                       { borderTopWidth: 5, justifyContent: 'center', alignItems: 'center' },
                       isActive ? { borderColor: 'hotpink'} : { borderColor: 'transparent' }
                     ]}>
-                  <Text style={isActive ? { color: 'hotpink' } : null}>{ label }</Text>
+                  <Text style={isActive ? { color: 'hotpink' } : null}>{ name }</Text>
                 </View>
               )}>
         <Tabbar.Item name="Test 1">
