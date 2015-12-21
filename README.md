@@ -2,6 +2,8 @@
 
 React-Native Tab bar with more freedom
 
+**Note:** If you used the previous 0.1.x versions, you will need to use the new API.
+
 ### Introduction
 
 So to make story short I didn't like react-native Tabbar base component. It is very basic and it doesn't support custom icons. Then after couple of weeks, (react-native-icons)[https://github.com/corymsmith/react-native-icons] came with a lot of new features such as Custom icons, and I loved it. It served me pretty well until my requirement changed. Now I have to support multiple layers of icons, custom image and custom view for each icon. Unfortunately, (react-native-icons)[https://github.com/corymsmith/react-native-icons] doesn't support custom image yet. So I decided to create a universal module which technically can work on both iOS and Android version of `react-native`.
