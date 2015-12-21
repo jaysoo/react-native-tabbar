@@ -14,6 +14,10 @@ So to make story short I didn't like react-native Tabbar base component. It is v
 npm install react-native-tabbar
 ```
 
+### Demo
+
+![](./tab-demo.gif)
+
 ### Usage
 
 ```js
