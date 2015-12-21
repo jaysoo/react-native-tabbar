@@ -4,19 +4,18 @@
  */
 'use strict';
 
-var React = require('react-native');
-var {
+const React = require('react-native');
+const {
   Text,
   View,
 } = React;
 
-var Tabbar = require('react-native-tabbar');
-var Item = Tabbar.Item;
+const Tabbar = require('react-native-tabbar');
 
-var Example = React.createClass({
+const Example = React.createClass({
   getInitialState: function () {
     return {
-      selected: 'test1'
+      selected: 'Test 1'
     };
   },
 
@@ -28,34 +27,30 @@ var Example = React.createClass({
   },
 
   render: function() {
-    var state = this.state;
+    const state = this.state;
 
     return (
-      <Tabbar selected={state.selected} onTabItemPress={this.onTabItemPress}>
-        <Item name="test1">
-          <Item.Content>
-            <View style={{ flex: 1, backgroundColor: 'blue' }}></View>
-          </Item.Content>
-          <Item.Icon>
-            <Text>Test1 Icon</Text>
-          </Item.Icon>
-        </Item>
-        <Item name="test2">
-          <Item.Content>
-            <View style={{ flex: 1, backgroundColor: 'red' }}></View>
-          </Item.Content>
-          <Item.Icon>
-            <Text>Test2 Icon</Text>
-          </Item.Icon>
-        </Item>
-        <Item name="test3">
-          <Item.Content>
-            <View style={{backgroundColor: 'yellow' }}></View>
-          </Item.Content>
-          <Item.Icon>
-            <Text>Test3 Icon</Text>
-          </Item.Icon>
-        </Item>
+      <Tabbar selected={state.selected}
+              onTabItemPress={this.onTabItemPress}
+              style={{ borderTopWidth: 1, borderColor: 'hotpink' }}
+              renderTabComponent={(label, isActive) => (
+                <View
+                    style={[
+                      { borderTopWidth: 5, justifyContent: 'center', alignItems: 'center' },
+                      isActive ? { borderColor: 'hotpink'} : { borderColor: 'transparent' }
+                    ]}>
+                  <Text style={isActive ? { color: 'hotpink' } : null}>{ label }</Text>
+                </View>
+              )}>
+        <Tabbar.Item name="Test 1">
+          <View style={{ flex: 1, backgroundColor: 'blue' }}></View>
+        </Tabbar.Item>
+        <Tabbar.Item name="Test 2">
+          <View style={{ flex: 1, backgroundColor: 'red' }}></View>
+        </Tabbar.Item>
+        <Tabbar.Item name="Test 3">
+          <View style={{ flex: 1, backgroundColor: 'yellow' }}></View>
+        </Tabbar.Item>
       </Tabbar>
     );
   }

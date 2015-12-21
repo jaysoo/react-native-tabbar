@@ -3,4 +3,4 @@
 const React = require('react-native');
 const Example = require('./example');
 
-React.AppRegistry.registerComponent('FreeTabbar', () => Example);
+React.AppRegistry.registerComponent('TabbarExample', () => Example);
